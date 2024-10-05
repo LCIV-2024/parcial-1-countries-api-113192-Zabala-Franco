@@ -1,8 +1,9 @@
 package ar.edu.utn.frc.tup.lciii.service;
 
+import ar.edu.utn.frc.tup.lciii.dtos.common.CountryDTO;
 import ar.edu.utn.frc.tup.lciii.model.Country;
-import ar.edu.utn.frc.tup.lciii.repository.CountryRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -14,8 +15,8 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class CountryService {
 
-        private final CountryRepository countryRepository;
 
+        @Autowired
         private final RestTemplate restTemplate;
 
         public List<Country> getAllCountries() {
